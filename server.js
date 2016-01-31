@@ -39,12 +39,12 @@ router.get('/new/:url(*)', function(req,res){
             saveUrl.save(function(err, data){
                 if(err)
                     throw err;
-                res.json({shortUrl:'https://api-projects-thegame2500.c9users.io/'+data._id, orginalUrl : inputUrl});
+                res.json({shortUrl:'http://pure-tundra-47718.herokuapp.com/'+data._id, orginalUrl : inputUrl});
                 return;
             });
         }
         else{
-            res.json({shortUrl:'https://api-projects-thegame2500.c9users.io/'+data[0]._id, orginalUrl : data[0].url});
+            res.json({shortUrl:'http://pure-tundra-47718.herokuapp.com/'+data[0]._id, orginalUrl : data[0].url});
         }
     });
 });
