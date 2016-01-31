@@ -7,6 +7,7 @@ var app = express();
 var validate = require('url-validator');
 var autoIncrement = require('mongoose-auto-increment');
 var connection = mongoose.connect(process.env.MONGOLAB_URI);
+var path    = require("path");
 
 app.use(router);
 autoIncrement.initialize(connection);
@@ -21,7 +22,7 @@ urlSchema.plugin(autoIncrement.plugin, 'url');
 var url = mongoose.model('url', urlSchema);
 
 router.get('/',function(req,res){
-    res.end('Hi!');
+    res.sendFile(path.join(__dirname+'/public/index.html'))
 });
 
 
