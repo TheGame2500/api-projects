@@ -6,7 +6,7 @@ var router=Router();
 var app = express();
 var validate = require('url-validator');
 var autoIncrement = require('mongoose-auto-increment');
-var connection = mongoose.connect('mongodb://localhost:27017/clementinejs');
+var connection = mongoose.connect(process.env.MONGOLAB_URI);
 
 app.use(router);
 autoIncrement.initialize(connection);
